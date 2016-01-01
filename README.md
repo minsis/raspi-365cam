@@ -5,7 +5,7 @@ that file to a given server.
 
 Adding light sensor to detect the amount of light in the room or outside
 and trigger the shutter speed and exposure accordingly.
-6
+
 ## Variables to edit
 Be sure to change the variables in the script to match you system.
 * local_pic_path  #path for your picture be sure to add the trailing /
@@ -17,8 +17,8 @@ you want this feature turned off be sure to comment out the following
 line:
 * takepicdef.xferfile(final_pic, remote_server, remote_path)
 
-``
+```
 The point of this project was to learn a little bit of python, Linux,
 and git. However, this script could be useful to someone who wants
 to do a 365 project with their Raspberry Pi camera.
-``
+```
