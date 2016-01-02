@@ -16,7 +16,6 @@ options["enable_light_sensor"] = on
 #shell command and process to take picture
 #add whatever flags you see fit
 tmp_pic = local_pic_path + "temp.jpg" #name and location of temp pic
-#take_picture = "raspistill -ex night -q 100 -hf -vf -e jpg -o " + tmp_pic
 subprocess.call (takepicdef.take_picture(options,tmp_pic), shell=True, stderr=subprocess.STDOUT)
 
 #open picture for EXIF tag reading

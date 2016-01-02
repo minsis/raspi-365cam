@@ -1,8 +1,8 @@
 import subprocess
-import RPi.GPIO as GPIO
+#import RPi.GPIO as GPIO
 
 def light_sensor():
-	return " -ex night"
+	return " -ss 1000000"
 
 def camera_app():
 	return "raspistill"
@@ -19,6 +19,7 @@ def take_picture(options,tmp_pic):
 	#crude function, better one coming later
 	on = 1; off = 0
 	camera_proc = camera_app()
-	if options["enable_light_sensor"] = on:
+	if options["enable_light_sensor"] == on:
 		camera_proc += light_sensor()
 	camera_proc += " -q 100 -hf -vf -e jpg -o " + tmp_pic
+	return camera_proc
