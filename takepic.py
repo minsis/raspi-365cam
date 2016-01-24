@@ -2,6 +2,7 @@ import exifread #need to install python-exif package
 import subprocess #need to install python-subprocess package
 import takepicdef
 
+options = dict()
 #-----BEGIN USER DEFINED VARIABLES----# Temp path definitions (better implemenation coming)
 #remote server and path are optional unless you want to send the pic somewhere
 local_pic_path = "/images/" #path fo your picture besure to add the trailing /
@@ -33,6 +34,5 @@ final_pic = "'" + local_pic_path + "PiCam-" + pic_date.replace(" ", ":") + ".jpg
 rename_pic = "mv %s %s" % (tmp_pic, final_pic)
 subprocess.call (rename_pic, shell=True, stderr=subprocess.STDOUT)
 
-#uncomment below line if you want to transfer the picture to a remote location
 if options["transfer_picture"]:
     takepicdef.xferfile(final_pic, remote_server, remote_path)

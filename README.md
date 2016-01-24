@@ -1,5 +1,3 @@
-# rough draft application
-
 Python script to trigger a picture on the Raspberry Pi and transfers
 that file to a given server.
 
@@ -10,9 +8,9 @@ the TSL2561 sensor and breakout board from Adafruit. This sensor uses the I2C
 bus and requires you to enable hardware and driver on the RasPi. If using other
 sensors you may need to experiment with it.
 
-[Sensor](https://www.adafruit.com/products/439)
-[TSL2561 Python Library](https://github.com/IainColledge/Adafruit-Raspberry-Pi-Python-Code/tree/master/Adafruit_TSL2561)
-[Adafruit I2C Library](https://github.com/adafruit/Adafruit-Raspberry-Pi-Python-Code/tree/master/Adafruit_I2C)
+[Sensor](https://www.adafruit.com/products/439)  
+[TSL2561 Python Library](https://github.com/IainColledge/Adafruit-Raspberry-Pi-Python-Code/tree/master/Adafruit_TSL2561)  
+[Adafruit I2C Library](https://github.com/adafruit/Adafruit-Raspberry-Pi-Python-Code/tree/master/Adafruit_I2C)  
 
 There's also a new options section to toggle if you want certain settings
 to be used with the raspistill application. Right now its pretty crude and
