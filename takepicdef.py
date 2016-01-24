@@ -1,7 +1,9 @@
 import subprocess
-from TSL2561 import Adafruit_TSL2561
+
 
 def light_sensor():
+	from TSL2561 import Adafruit_TSL2561
+	
 	#Set the lux values here with your own testing. Currently only doing
 	#high, med, low ranges.
 	RANGE_HIGH_UPPER = 65535
@@ -15,11 +17,11 @@ def light_sensor():
 
 	LightSensor.enable_auto_gain(True)
 	lux = LightSensor.calculate_lux()
-	if lux >= RANGE_HIGH_LOWER or lux <= RANGE_HIGH_UPPER:
+	if lux >= RANGE_HIGH_LOWER and lux <= RANGE_HIGH_UPPER:
 		return ""
-	elif lux >= RANGE_MED_LOWER or lux <= RANGE_MED_UPPER:
+	elif lux >= RANGE_MED_LOWER and lux <= RANGE_MED_UPPER:
 		return " -ss 10000"
-	elif lux >= RANGE_LOW_LOWER or lux <= RANGE_LOW_UPPER:
+	elif lux >= RANGE_LOW_LOWER and lux <= RANGE_LOW_UPPER:
 		return " -ss 1000000"
 	else:
 		return ""

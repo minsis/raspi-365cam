@@ -3,13 +3,15 @@ import subprocess #need to install python-subprocess package
 import takepicdef
 
 #-----BEGIN USER DEFINED VARIABLES----# Temp path definitions (better implemenation coming)
+#remote server and path are optional unless you want to send the pic somewhere
 local_pic_path = "/images/" #path fo your picture besure to add the trailing /
 remote_server = "remote.server.example.com" #remote ssh server
 remote_path = "/usr/share/nginx/html/images/" #remote file path of ssh server. Be sure to add trailing /
 #-----END USER DEFINED VARIABLES-----#
 
 #----BEGIN ENABLE/DISABLE OPTIONS-----# Temp option switching (better implemenation coming)
-options["enable_light_sensor"] = True
+options["enable_light_sensor"] = False
+options["transfer_picture"] = False
 #-----END ENABLE/DISABLE OPTIONS------#
 
 #shell command and process to take picture
@@ -31,5 +33,6 @@ final_pic = "'" + local_pic_path + "PiCam-" + pic_date.replace(" ", ":") + ".jpg
 rename_pic = "mv %s %s" % (tmp_pic, final_pic)
 subprocess.call (rename_pic, shell=True, stderr=subprocess.STDOUT)
 
-#comment below line if you don't want to transfer the picture to a remote location
-takepicdef.xferfile(final_pic, remote_server, remote_path)
+#uncomment below line if you want to transfer the picture to a remote location
+if options["transfer_picture"]:
+    takepicdef.xferfile(final_pic, remote_server, remote_path)
