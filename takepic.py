@@ -8,9 +8,8 @@ remote_server = "remote.server.example.com" #remote ssh server
 remote_path = "/usr/share/nginx/html/images/" #remote file path of ssh server. Be sure to add trailing /
 #-----END USER DEFINED VARIABLES-----#
 
-options = {}; on = 1; off = 0
 #----BEGIN ENABLE/DISABLE OPTIONS-----# Temp option switching (better implemenation coming)
-options["enable_light_sensor"] = on
+options["enable_light_sensor"] = True
 #-----END ENABLE/DISABLE OPTIONS------#
 
 #shell command and process to take picture
